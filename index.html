@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Sphere</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="heading">
+        <h1>Contact Sphere</h1>
+    </div>
+    <div class="floatingButton">
+        <button onclick="navigateToPage('allcontacts.html')">
+            All Contacts
+        </button>
+    </div>
+
+    <div class="glass-container">
+        <div class="contact-box">
+            <h2> Add Contact</h2>
+            <form id="addContactForm">
+                <input type="text" id="FirstName" name="firstName" required placeholder="First Name">
+                <input type="text" id="LastName" name="lastName" required placeholder="Last Name">
+                <input type="number" id="PhoneNumber" name="phoneNumber" required placeholder="PhoneNumber">
+                <input type="email" id="Email" name="email" required placeholder="Email">
+                <input type="date" id="DOB" name="DOB" required placeholder="Date of Birth">
+
+                <button type="submit" onclick="addContactButton(); return false;">Add Contact</button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="glass-container">
+        <div class="contact-box">
+            <h2> Search Contact</h2>
+            <form id="SearchContact">
+                <input type="number" id="searchKey" name="phoneNumber" required placeholder="PhoneNumber">
+                <button type="submit" onclick="searchContactButton(); return false">Search</button>
+            </form>
+        </div>
+        <div class="contact-box" style="display: none;" id="SearchResult">
+            <h2>Search Result</h2>
+            <form id="editContactForm">
+                <input type="text" id="EditFirstName" name="firstName" required placeholder="First Name">
+                <input type="text" id="EditLastName" name="lastName" required placeholder="Last Name">
+                <input type="number" id="EditPhoneNumber" name="phoneNumber" required placeholder="PhoneNumber">
+                <input type="email" id="EditEmail" name="email" required placeholder="Email">
+                <input type="date" id="EditDOB" name="DOB" required placeholder="Date of Birth">
+
+                <button type="submit" onclick="updateContactButton(); return false;">Save Changes</button>
+            </form>
+
+        </div>
+    </div>
+    <div id="toaster"></div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Sphere</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="glass-container">
+        <div class="contact-box">
+            <h2>Contact List</h2>
+            <br>
+            <table id="contactTable" border="1">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contact rows will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="toaster"></div>
+
+    <script>
+        // Function to dynamically populate the contact table
+        function populateContactTable() {
+            var contactTableBody = document.querySelector('#contactTable tbody');
+            contactTableBody.innerHTML = ''; // Clear existing content
+
+            Contact.ContactList.forEach(function(contact) {
+                var row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><input value='${contact.firstName}' type='text' id='fname${contact.phoneNumber}'></td>
+                    <td><input value='${contact.lastName}' type='text' id='lname${contact.phoneNumber}'></td>
+                    <td>${contact.phoneNumber} </td>
+                    <td><input value='${contact.email}' type='email' id='email${contact.phoneNumber}'></td>
+                    <td><input value='${contact.dateOfBirth}' type='date' id='dob${contact.phoneNumber}'></td>
+                    <td><button onclick="updateContact(${contact.phoneNumber})">Update</button></td>
+                    <td><button onclick="deleteContact(${contact.phoneNumber})">Delete</button></td>
+
+                `;
+                contactTableBody.appendChild(row);
+            });
+        }
+
+        // Call the function to populate the table when the page loads
+        populateContactTable();
+    </script>
+
+</body>
+
+</html>

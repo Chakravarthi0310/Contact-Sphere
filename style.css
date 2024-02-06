@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    overflow: auto;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('Web\ Background.jpg');
+    background-size: cover;
+}
+
+.heading {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 10px;
+    z-index: 2;
+}
+
+.glass-container {
+    width: 300px;
+    min-width: fit-content;
+    min-height: fit-content;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    position: relative;
+    margin-right: 60px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.glass-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.contsct-box {
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    opacity: 0.2;
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 13px;
+}
+
+.floatingButton {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 2;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
+}
+
+p {
+    font-size: 12 px;
+    color: #fff;
+    margin-top: 15px;
+}
+
+#register {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#toaster {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: aquamarine;
+    padding: 15px;
+    z-index: 2;
+}
+
+tr {
+    color: #fff;
+}
